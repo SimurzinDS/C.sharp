@@ -117,6 +117,42 @@
 // Console.WriteLine(newText);
 // Console.WriteLine();
 
+// int [] arr = {1, 8, 0, 4, 3, 2, 6, 7, 1, 1, 4, 7, 9, 5};
+
+// void PrintArray(int [] array)
+// {
+//     int count = array.Length;
+//     for(int i = 0; i < count; i++)
+//     {
+//         Console.Write($"{array[i]} ");
+//     }
+//     Console.WriteLine();
+// }
+
+// void SelectionSort(int [] array)
+// {
+//     for(int i = 0; i < array.Length - 1; i++)
+//     {
+//         int minPosition = i;
+//         for(int j = i + 1; j < array.Length; j++)
+//         {
+//             if(array[j] < array[minPosition])
+//             {
+//                minPosition = j; 
+//             } 
+//         } 
+//         int temporary = array[i];
+//         array[i] = array[minPosition];
+//         array[minPosition] = temporary;
+//         // PrintArray(arr); // Посмотреть наглядно как работает сортировка
+//     }
+// }
+
+// PrintArray(arr);
+// SelectionSort(arr);
+
+// PrintArray(arr); // Закоментировать если разкоментированна строка 147
+
 int [] arr = {1, 8, 0, 4, 3, 2, 6, 7, 1, 1, 4, 7, 9, 5};
 
 void PrintArray(int [] array)
@@ -133,17 +169,17 @@ void SelectionSort(int [] array)
 {
     for(int i = 0; i < array.Length - 1; i++)
     {
-        int minPosition = i;
+        int maxPosition = i;
         for(int j = i + 1; j < array.Length; j++)
         {
-            if(array[j] < array[minPosition])
+            if(array[j] > array[maxPosition])
             {
-               minPosition = j; 
+               maxPosition = j; 
             } 
         } 
         int temporary = array[i];
-        array[i] = array[minPosition];
-        array[minPosition] = temporary;
+        array[i] = array[maxPosition];
+        array[maxPosition] = temporary;
         // PrintArray(arr); // Посмотреть наглядно как работает сортировка
     }
 }
